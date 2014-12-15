@@ -1,11 +1,14 @@
 <?php
 
 class Login extends CustomController {
+    
     var $check_session = false;
+
 
     function __construct() {
         parent::__construct();
     }
+
 
     public function index() {
         if (strpos("http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'], site_url()) === false) {
@@ -13,12 +16,13 @@ class Login extends CustomController {
         }
 
         if ($this->session->userdata(LOGGED)) {
-            redirect('cmspanel/start', 'refresh');
+            redirect(CMSPANELFOLDER.'start', 'refresh');
         }
         else {
-            $this->load->view('cmspanel/login', $this->data);
+            $this->load->view(CMSPANELFOLDER.'login', $this->data);
         }
     }
+
 
     public function doLogin() {
         $this->load->model('User');
@@ -39,22 +43,23 @@ class Login extends CustomController {
                     redirect($this->session->userdata('url'), 'refresh');
                 }
                 else {
-                    redirect('cmspanel/', 'refresh');
+                    redirect(CMSPANELFOLDER, 'refresh');
                 }
             }
             else {
                 $this->setMessage("Invalid login!", true);
-                $this->load->view('cmspanel/login', $this->data);
+                $this->load->view(CMSPANELFOLDER.'login', $this->data);
             }
         }
         else {
             $this->setMessage("Invalid login!", true);
-            $this->load->view('cmspanel/login', $this->data);
+            $this->load->view(CMSPANELFOLDER.'login', $this->data);
         }
     }
 
+
     public function doLogout() {
         $this->session->sess_destroy();
-        redirect('cmspanel/', 'refresh');
+        redirect(CMSPANELFOLDER, 'refresh');
     }
 }
