@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'CharriotDeluxe';
+    src: url('../webfonts/CharriotDeluxe.eot');
+    src: url('../webfonts/CharriotDeluxe.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/CharriotDeluxe.woff') format('woff'),
+         url('../webfonts/CharriotDeluxe.ttf') format('truetype');
+}

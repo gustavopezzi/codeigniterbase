@@ -1,0 +1,20 @@
+.messages-wrapper {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: normal;
+}
+
+.messages-wrapper .msgs {
+	color: #009FFF;
+}
+
+.messages-wrapper .infos {
+    color: #D4DF00;
+}
+
+.messages-wrapper .errors {
+    color: #F00;
+}
